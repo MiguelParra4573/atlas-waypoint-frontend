@@ -1,32 +1,25 @@
-# React + TypeScript + Vite
+# Atlas Waypoint — Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Torre de control de flota: mapa en vivo, panel de vehículos, alertas y KPIs. React 19 + TypeScript + Vite.
 
-Currently, two official plugins are available:
+Backend, simulador y entorno local (Docker Compose): [atlas-waypoint-backend](https://github.com/MiguelParra4573/atlas-waypoint-backend).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Cómo correrlo
 
-## React Compiler
+Requisitos: Node 22.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev        # http://localhost:5173
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Scripts
+
+| Comando | Qué hace |
+| --- | --- |
+| `npm run dev` | Servidor de desarrollo |
+| `npm test` | Tests (Vitest + Testing Library) |
+| `npm run lint` | Lint (oxlint) |
+| `npm run build` | Typecheck y build de producción |
+
+Commits convencionales (`feat:`, `fix:`, `chore:`...). Una fase = una rama + un PR + un tag. El plan completo está en el repo del backend (`docs/`).
