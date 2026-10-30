@@ -1,0 +1,49 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    # Sin este prefijo los mensajes de Dependabot no pasarian el hook
+    # commit-msg al rebasear en local.
+    commit-message:
+      prefix: 'chore(deps)'
+    groups:
+      # Las piezas del harness llegan en un solo PR: si se rompen, se rompen
+      # juntas y se revierten con un git revert.
+      harness-de-calidad:
+        patterns:
+          - 'prettier'
+          - 'oxlint'
+          - 'typescript'
+      react:
+        patterns:
+          - 'react'
+          - 'react-dom'
+          - '@types/react'
+          - '@types/react-dom'
+      vitest:
+        patterns:
+          - 'vitest'
+          - '@vitest/*'
+          - '@testing-library/*'
+          - 'jsdom'
+      vite:
+        patterns:
+          - 'vite'
+          - '@vitejs/*'
+    ignore:
+      # Un major de typescript puede volver a fallar el typecheck estricto con
+      # chequeos nuevos: es una migracion con trabajo, no un bump.
+      - dependency-name: 'typescript'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: github-actions
+    directory: '/'
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: 'ci(deps)'
