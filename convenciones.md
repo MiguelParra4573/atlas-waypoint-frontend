@@ -1,7 +1,7 @@
 # Convenciones de código — atlas-waypoint-frontend
 
 Cómo se escribe el código de este repo y qué lo verifica. El **por qué** de cada elección está en
-`docs/adr/0004-harness-de-calidad.md` del repo del backend, que aplica a los dos; acá está el
+`../docs/adr/0004-harness-de-calidad.md`, raíz del workspace, que aplica a los dos repos; acá está el
 **cómo**.
 
 La arquitectura —qué capa puede llamar a qué— es otro documento: `../docs/arquitectura.md` en la raíz
