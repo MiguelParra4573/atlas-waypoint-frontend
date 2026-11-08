@@ -1,0 +1,18 @@
+# Un solo fin de linea en el indice y en el arbol de trabajo: LF.
+# Sin esta regla, con core.autocrlf=true el indice queda en LF y el arbol en
+# CRLF, y Prettier --check falla con un diff de puro \r en todos los archivos.
+* text=auto eol=lf
+
+# Scripts de git: el sh de Git for Windows no tolera CRLF.
+/.githooks/** text eol=lf
+
+# Los que de verdad son de Windows.
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binarios: nada de normalizar.
+*.png binary
+*.jpg binary
+*.ico binary
+*.woff binary
+*.woff2 binary

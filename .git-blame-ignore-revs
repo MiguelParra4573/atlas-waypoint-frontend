@@ -1,0 +1,6 @@
+# Commits de puro reformateo. Se excluyen del blame con:
+#   git config blame.ignoreRevsFile .git-blame-ignore-revs
+# GitHub lo honra automaticamente.
+
+# style: aplicar prettier (sin cambios de comportamiento)
+bc590967cd48515b9d8b12b3d28c284c641818b2

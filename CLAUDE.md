@@ -4,17 +4,22 @@ Guía para Claude Code en este repositorio.
 
 ## Qué es
 
-Frontend de la torre de control de flota (proyecto de portafolio). Repo separado del backend: [atlas-waypoint-backend](https://github.com/MiguelParra4573/atlas-waypoint-backend), donde viven el plan (`docs/`), los ADRs, el simulador y el Docker Compose del entorno.
+Frontend de la torre de control de flota (proyecto de portafolio). Repo separado del backend: [atlas-waypoint-backend](https://github.com/MiguelParra4573/atlas-waypoint-backend), donde vive el simulador. El plan, los ADR y los procesos de negocio están centralizados en [`../docs/`](<../docs/INDICE.md>), raíz del workspace; la infraestructura local, en `../platform/`.
 
 Stack: Vite + React 19 + TypeScript. Tests con Vitest y Testing Library, lint con oxlint.
 
 ## Comandos
 
 ```bash
-npm install
+npm install                  # instala y activa los hooks de git (script prepare)
 npm run dev
-npm run lint && npm test && npm run build
+npm run format               # formatea con Prettier
+npm run format:check && npm run lint && npm run typecheck && npm run test:coverage && npm run build
 ```
+
+La última línea es, en orden, lo mismo que corre CI. Las convenciones de código y los gates que
+rompen el build están en [convenciones.md](convenciones.md); el por qué de cada elección, en
+`../docs/adr/0004-harness-de-calidad.md`, raíz del workspace, que aplica a los dos repos.
 
 ## Decisiones previstas (Fase 5 del plan)
 
