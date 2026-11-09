@@ -28,7 +28,7 @@
     "@vitejs/plugin-react": "^6.1.1",
     "@vitest/coverage-v8": "^5.0.5",
     "jsdom": "^29.1.1",
-    "oxlint": "1.90.0",
+    "oxlint": "1.91.0",
     "prettier": "3.9.10",
     "typescript": "~6.0.2",
     "vite": "^8.3.0",
